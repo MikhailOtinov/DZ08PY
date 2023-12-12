@@ -1,17 +1,14 @@
 import json
 
-
 phonebook = { }
 
 def save() -> None:
-
     with open("phoneNumber.json", "w", encoding="utf-8") as doc:
         doc.write(json.dumps(phonebook, ensure_ascii=False))
     print("")
 
-
 def load() -> dict:
-    
+   
     with open("phoneNumber.json", "r", encoding="utf-8") as doc:
         telephone = json.load(doc)
     print("")
@@ -24,7 +21,7 @@ def display_all() -> None:
         br = info['birthday'] if 'birthday' in info else ''
         em = info['email'] if 'email' in info else ''
         print(f"{name}: tel - {tel}, birthday - {br}, email - {em}")
-        print("-" * 20)  # Разделитель между контактами
+        print("-" * 20) 
 
 def add_contact(
     name: str,
@@ -33,13 +30,13 @@ def add_contact(
     email: str
 ) -> None:
     
-    phonebook[name] = {}  # Создаем новый словарь для контакта с именем 'name'
+    phonebook[name] = {} 
 
-    if phone:  # Проверяем, что список телефонов не пустой
+    if phone:  
         phonebook[name]['phones'] = phone
-    if birthday:  # Проверяем, что день рождения не пустая
+    if birthday:  
         phonebook[name]['birthday'] = birthday
-    if email:  # Проверяем, что email не пустой
+    if email:  
         phonebook[name]['email'] = email
 
     print(f"Контакт {name} добавлен.\n")
@@ -47,7 +44,7 @@ def add_contact(
 def find_contact(
     name: str
 ) -> None:
-   
+    
     if name in phonebook:
         print(f"{name}: tel - {', '.join(map(str, phonebook[name]['phones']))}, birthday - {phonebook[name]['birthday']}, email - {phonebook[name]['email']}\n")
     else:
@@ -66,7 +63,7 @@ def change_contact(
                     )
             if info == "name":
                 new_name = input("Введите имя: ")
-                phonebook[new_name] = phonebook.pop(name)  # Удаляем старый ключ и получаем его значение
+                phonebook[new_name] = phonebook.pop(name) 
             elif info == "tel":
                 phone = list(map(int, input("Введите номера телефонов через пробел: ").split()))
                 phonebook[name]['phones'] = phone
