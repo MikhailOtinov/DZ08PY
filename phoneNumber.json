@@ -1,0 +1,32 @@
+{
+    "Дядя Ваня": {
+        "phones": [
+            8311654654,
+            89654515
+        ],
+        "birthday": "05.05.1990",
+        "email": "12@ya.ru"
+    },
+    "Дядя Вася": {
+        "phones": [
+            54654541
+        ],
+        "birthday": "07.01.2001",
+        "email": "123123123@ya.ru"
+    },
+    "Дядя Петя": {
+        "phones": [
+            482374923742934723
+        ],
+        "birthday": "01.09.1999",
+        "email": "wffwepofpwmef@gmail.ru"
+    },
+    "Gena": {
+        "phones": [
+            123,
+            123
+        ],
+        "birthday": "23.23.23",
+        "email": "vldf@mail.ru"
+    }
+}
